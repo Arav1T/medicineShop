@@ -4,6 +4,8 @@ import './index.css'
 import App from './App.tsx'
 import CartProvider from './store/Context.tsx'
 import ReduxApp from './ReduxApp.tsx'
+import { Provider } from 'react-redux'
+import Store from './redux/store/Store.tsx'
 
 createRoot(document.getElementById('root')!).render(
   // <StrictMode>
@@ -11,7 +13,10 @@ createRoot(document.getElementById('root')!).render(
 
   //   <App/>
   // </CartProvider>
-  <ReduxApp/>
+  <Provider store={Store}>
+
+    <ReduxApp/>
+  </Provider>
   
   // </StrictMode>,
 )
